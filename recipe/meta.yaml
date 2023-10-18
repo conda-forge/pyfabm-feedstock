@@ -9,10 +9,16 @@ source:
   url: https://github.com/fabm-model/fabm/releases/download/v{{ version }}/code.tar.gz
   sha256: 30bbe419d3ef84042f626c7830c8e82d7fee346ca1e374cb30b48716adabffc6
   patches:
-  - ersem.patch
+    - ersem.patch
 
 build:
   number: {{ build }}
+  entry_points:
+    - fabm_complete_yaml = pyfabm.utils.fabm_complete_yaml:main
+    - fabm_configuration_gui = pyfabm.utils.fabm_configuration_gui:main
+    - fabm_describe_model = pyfabm.utils.fabm_describe_model:main
+    - fabm_evaluate = pyfabm.utils.fabm_evaluate:main
+    - fabm_stress_test = pyfabm.utils.fabm_stress_test:main
 
 requirements:
   build:
@@ -42,7 +48,15 @@ requirements:
 test:
   imports:
     - pyfabm
-
+  requires:
+    - netcdf4
+    - pyqt
+  commands:
+    - fabm_complete_yaml -h
+    - fabm_configuration_gui -h
+    - fabm_describe_model -h
+    - fabm_evaluate -h
+    - fabm_stress_test -h
 
 about:
   home: https://fabm.net/python
