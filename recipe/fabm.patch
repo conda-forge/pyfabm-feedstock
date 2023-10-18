@@ -1,0 +1,21 @@
+diff --git a/src/pyfabm/gui_qt.py b/src/pyfabm/gui_qt.py
+index b665607..9bf8968 100644
+--- a/src/pyfabm/gui_qt.py
++++ b/src/pyfabm/gui_qt.py
+@@ -3,13 +3,13 @@ import pyfabm
+ 
+ try:
+     from PyQt5 import QtCore, QtGui, QtWidgets
+-except ImportError:
++except ImportError as e1:
+     try:
+         from PySide import QtCore, QtGui
+ 
+         QtWidgets = QtGui
+-    except ImportError:
+-        print("Unable to load PyQt5 or PySide. Is either installed?")
++    except ImportError as e2:
++        print(f"Unable to load PyQt5 or PySide. Is either installed? {e1} {e2}")
+         sys.exit(1)
+ 
+ 
