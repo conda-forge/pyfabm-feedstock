@@ -9,6 +9,7 @@ source:
   url: https://github.com/fabm-model/fabm/releases/download/v{{ version }}/code.tar.gz
   sha256: 30bbe419d3ef84042f626c7830c8e82d7fee346ca1e374cb30b48716adabffc6
   patches:
+    - fabm.patch
     - ersem.patch
 
 build:
