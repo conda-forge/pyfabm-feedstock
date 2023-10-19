@@ -1,5 +1,5 @@
 {% set version = "2.0.0" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 package:
   name: pyfabm
@@ -26,17 +26,7 @@ requirements:
     - cmake
     - {{ compiler('fortran') }}  # [unix]
     - make  # [unix]
-
-    # netcdf-fortran gets its Fortran compiler on Windows with
-    # compiler('m2w64_fortran') but that does not seem to work for us
-    # Error: Unsatisfiable dependencies ... ['m2w64_fortran_win-64']
-    #- {{ compiler('m2w64_fortran') }}  # [win]
-    - m2w64-gcc-fortran  # [win]
-
-    # netcdf-fortran uses m2-make, but that does not result in a make
-    # program that CMake's MinGW generator recognizes
-    #- m2-make  # [win]
-    - m2w64-make  # [win]
+    - {{ compiler('m2w64_fortran') }}  # [win]
   host:
     - python
     - pip
@@ -44,9 +34,11 @@ requirements:
     - python
     - numpy
     - pyyaml
-    #- m2w64-gcc-libgfortran  # [win]
+    - m2w64-gcc-libgfortran  # [win]
 
 test:
+  source_files:
+    - testcases/fabm-gotm-npzd.yaml
   imports:
     - pyfabm
   requires:
@@ -58,6 +50,7 @@ test:
     - fabm_describe_model -h
     - fabm_evaluate -h
     - fabm_stress_test -h
+    - fabm_describe_model testcases/fabm-gotm-npzd.yaml
 
 about:
   home: https://fabm.net/python
