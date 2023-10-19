@@ -34,6 +34,7 @@ requirements:
     - python
     - numpy
     - pyyaml
+    - m2w64-gcc-libgfortran  # [win]
 
 test:
   source_files:
