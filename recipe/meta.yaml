@@ -47,6 +47,8 @@ requirements:
     #- m2w64-gcc-libgfortran  # [win]
 
 test:
+  source_files:
+    - testcases/fabm-gotm-npzd.yaml
   imports:
     - pyfabm
   requires:
@@ -58,7 +60,7 @@ test:
     - fabm_describe_model -h
     - fabm_evaluate -h
     - fabm_stress_test -h
-    - fabm_describe_model {{ SRC_DIR }}/testcases/fabm-gotm-npzd.yaml
+    - fabm_describe_model testcases/fabm-gotm-npzd.yaml
 
 about:
   home: https://fabm.net/python
