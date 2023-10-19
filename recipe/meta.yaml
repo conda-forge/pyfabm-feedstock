@@ -1,5 +1,5 @@
 {% set version = "2.0.0" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 package:
   name: pyfabm
@@ -58,6 +58,7 @@ test:
     - fabm_describe_model -h
     - fabm_evaluate -h
     - fabm_stress_test -h
+    - fabm_describe_model {{ SRC_DIR }}/testcases/fabm-gotm-npzd.yaml
 
 about:
   home: https://fabm.net/python
