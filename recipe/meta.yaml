@@ -1,5 +1,5 @@
-{% set version = "2.0.0" %}
-{% set build = 3 %}
+{% set version = "2.0.1" %}
+{% set build = 0 %}
 
 package:
   name: pyfabm
@@ -7,9 +7,9 @@ package:
 
 source:
   url: https://github.com/fabm-model/fabm/releases/download/v{{ version }}/code.tar.gz
-  sha256: 30bbe419d3ef84042f626c7830c8e82d7fee346ca1e374cb30b48716adabffc6
+  sha256: f65a2a0ff1597108d623682664ed386b8679bb9d390f45f4981d3ef702d0d02c
   patches:
-    - fabm.patch
+    #- fabm.patch
     - ersem.patch
 
 build:
