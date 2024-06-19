@@ -1,4 +1,4 @@
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 {% set build = 0 %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/fabm-model/fabm/releases/download/v{{ version }}/code.tar.gz
-  sha256: f65a2a0ff1597108d623682664ed386b8679bb9d390f45f4981d3ef702d0d02c
+  sha256: cc37f38f7e6e02b6361c13fec2f7e13ba6e053c03d20f280f8b4229101957226
   patches:
     #- fabm.patch
     - ersem.patch
