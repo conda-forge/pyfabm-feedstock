@@ -29,7 +29,6 @@ requirements:
     - {{ compiler('fortran') }}  # [unix]
     - make  # [unix]
     - {{ compiler('m2w64_fortran') }}  # [win]
-    - {{ stdlib("c") }}    # [win]
   host:
     - python
     - pip
