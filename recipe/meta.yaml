@@ -1,5 +1,5 @@
 {% set version = "2.1.2" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: pyfabm
@@ -27,10 +27,11 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cmake
-    - {{ compiler('fortran') }}  # [unix]
-    - make  # [unix]
-    - {{ compiler('m2w64_fortran') }}  # [win]
-    - {{ stdlib("c") }}    # [win]
+    - make                                   # [unix]
+    - {{ compiler('fortran') }}              # [unix]
+    - {{ stdlib("c") }}                      # [unix]
+    - {{ compiler('m2w64_fortran') }}        # [win]
+    - {{ stdlib("m2w64_c") }}                # [win]
   host:
     - python
     - pip
@@ -38,7 +39,7 @@ requirements:
     - python
     - numpy
     - pyyaml
-    - m2w64-gcc-libgfortran  # [win]
+    - m2w64-gcc-libgfortran                  # [win]
 
 test:
   source_files:
