@@ -10,8 +10,8 @@ source:
   sha256: d498c1113d1ba61d2545650038dfefeb1c24630d7fbfabccf6f9c77958b0006e
   patches:
     #- fabm.patch
-    - ersem.patch
-    - ogs.patch
+    #- ersem.patch
+    #- ogs.patch
 
 build:
   number: {{ build }}
@@ -30,11 +30,13 @@ requirements:
     - make                                   # [unix]
     - {{ compiler('fortran') }}              # [unix]
     - {{ stdlib("c") }}                      # [unix]
+    - ninja                                  # [win]
     - {{ compiler('m2w64_fortran') }}        # [win]
     - {{ stdlib("m2w64_c") }}                # [win]
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
     - numpy
