@@ -1,5 +1,5 @@
-{% set version = "2.1.4" %}
-{% set build = 1 %}
+{% set version = "2.1.5" %}
+{% set build = 0 %}
 
 package:
   name: pyfabm
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/fabm-model/fabm/releases/download/v{{ version }}/code.tar.gz
-  sha256: 7ac9145258806e816440e3e57fc4512718c9d01123168a148abc3db1eea987aa
+  sha256: 0565d5c6b79175f0917bfa93407ad1366ed3926b6bcb2be021e567f06c259bf8
   patches:
     #- fabm.patch
     #- ersem.patch
@@ -50,7 +50,7 @@ test:
     - pyfabm
   requires:
     - netcdf4
-    - pyqt
+    - pyside6
   commands:
     - fabm_complete_yaml -h
     - fabm_configuration_gui -h
