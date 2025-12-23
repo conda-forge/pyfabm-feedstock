@@ -29,7 +29,6 @@ requirements:
     - cmake
     - make                                   # [unix]
     - {{ compiler('fortran') }}              # [unix]
-    - {{ stdlib('c') }}                      # [unix]   # to hopefully avoid overlinking error on intel mac
     - {{ stdlib("c") }}                      # [unix]
     - ninja                                  # [win]
     - {{ compiler('m2w64_fortran') }}        # [win]
@@ -42,6 +41,7 @@ requirements:
     - python
     - numpy
     - pyyaml
+    - libgcc     # [osx and x86_64]   # to hopefully avoid overlinking error on intel mac
     #- m2w64-gcc-libgfortran                  # [win]
 
 test:
