@@ -1,4 +1,4 @@
-{% set version = "2.1.6" %}
+{% set version = "3.0.0" %}
 {% set build = 0 %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/fabm-model/fabm/releases/download/v{{ version }}/code.tar.gz
-  sha256: c0cea5ca8d0ac80507dc7bb9de1d003233f27b871a67444d033579158ce9b4f4
+  sha256: 5361dee553647cf844dd35b8378efaac1e870f46ce679f9470bcd2b8aff2c0d8
   patches:
     #- fabm.patch
     #- ersem.patch
@@ -41,6 +41,7 @@ requirements:
     - python
     - numpy
     - pyyaml
+    - libgcc     # [osx and x86_64]   # to hopefully avoid overlinking error on intel mac
     #- m2w64-gcc-libgfortran                  # [win]
 
 test:
